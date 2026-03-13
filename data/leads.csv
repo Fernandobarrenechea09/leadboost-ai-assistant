@@ -1,0 +1,15 @@
+name,phone,property_type,area,budget,timeline,lead_score
+
+name → client’s name
+
+phone → client’s phone number
+
+property_type → house, apartment, etc.
+
+area → neighborhood or city area
+
+budget → numeric value (dollars)
+
+timeline → months until purchase/rent
+
+lead_score → HOT / WARM / COLD
