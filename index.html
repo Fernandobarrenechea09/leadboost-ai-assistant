@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadBoost Chat</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+
+  <!-- Chat container -->
+  <div class="w-full max-w-md bg-white shadow-lg rounded-lg flex flex-col">
+    
+    <!-- Messages area -->
+    <div id="chat" class="flex-1 p-4 overflow-y-auto h-96">
+      <!-- Messages will appear here -->
+    </div>
+
+    <!-- Input area -->
+    <div class="flex border-t border-gray-300">
+      <input id="userInput" type="text" placeholder="Escribe tu mensaje..."
+             class="flex-1 p-2 outline-none">
+      <button id="sendBtn" class="bg-blue-500 text-white px-4">Enviar</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
