@@ -1,0 +1,32 @@
+import streamlit as st
+
+# Initialize chat history if it doesn't exist
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
+# Function to add user message and bot response
+def add_message(user_input):
+    # Example lead scoring logic
+    if "buy" in user_input.lower():
+        score = "HOT"
+        bot_reply = f"Gracias, {st.session_state.get('name','Cliente')}. Se reconoce la urgencia de tu perfil. Un agente te contactará lo mas pronto posible."
+    else:
+        score = "WARM"
+        bot_reply = f"Gracias, {st.session_state.get('name','Cliente')}. Hemos registrado tu informacion. Un agente te contactará pronto."
+    
+    # Save user and bot messages
+    st.session_state.chat_history.append(("user", user_input))
+    st.session_state.chat_history.append(("bot", bot_reply))
+
+# Input box
+user_input = st.text_input("Escribe tu mensaje:")
+
+if user_input:
+    add_message(user_input)
+
+# Display chat history
+for sender, message in st.session_state.chat_history:
+    if sender == "user":
+        st.markdown(f"**Tú:** {message}")
+    else:
+        st.markdown(f"**LeadBoost:** {message}")
